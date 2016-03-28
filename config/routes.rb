@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
- 
-  get 'dashboard/index'
-
-  get 'landing/show'
 
   root 'landing#show' 
 
@@ -12,8 +8,13 @@ Rails.application.routes.draw do
         registrations: 'users/registrations'
   }
 
-  # GET
+  resources :tweets
+  resources :profile, only: [:show, :edit, :update] do 
+    resources :address
+  end
 
+  # GET
+  get 'dashboard/index'
 
   # PUT
 
