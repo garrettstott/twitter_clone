@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def index
-    @tweet = Tweet.pagination(page, params[:page], per_page 15)
+    @tweets = Tweet.order(created_at: :desc).paginate(:page => params[:page])
   end
 end

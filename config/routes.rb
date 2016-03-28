@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'tweets/show'
+
+  get 'tweets/new'
+
+  get 'tweets/edit'
+
   root 'landing#show' 
 
   # RESOURCES
@@ -8,7 +14,7 @@ Rails.application.routes.draw do
         registrations: 'users/registrations'
   }
 
-  resources :tweets
+  resources :tweets, except: :index
   resources :profile, only: [:show, :edit, :update] do 
     resources :address
   end

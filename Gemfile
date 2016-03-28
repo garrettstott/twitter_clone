@@ -23,11 +23,11 @@ group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
   gem 'simplecov'
-  gem 'faker'
-  gem 'populator'
 end
 
 group :development, :test do
+  gem 'faker'
+  gem 'populator'
   gem 'pry'
   gem 'rspec-rails', '~> 3.0'
   gem 'better_errors'
@@ -35,9 +35,7 @@ group :development, :test do
 end
 
 group :development do
-  
   gem 'web-console', '~> 2.0'
-
   gem 'spring'
 end
 
